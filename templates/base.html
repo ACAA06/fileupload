@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>FILE Upload</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static "vendor/mdi-font/css/material-design-iconic-font.min.css"%}" rel="stylesheet" media="all">
+    <link href="{% static "vendor/font-awesome-4.7/css/font-awesome.min.css"%}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="{% static "vendor/select2/select2.min.css"%}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static "css/main.css"%}" rel="stylesheet" media="all">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/toastr.css' %}" media="all">
+<script type="text/javascript" src="{% static 'js/toastr.min.js' %}"></script>
+
+</head>
+<body>
+  {% if messages %}
+        {% for message in messages %}
+                <script type=text/javascript>toastr.{{message.tags}}('{{ message }}')</script>
+        {% endfor %}
+    {% endif %}
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
