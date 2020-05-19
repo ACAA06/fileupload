@@ -7,12 +7,11 @@ def getquote(request):
         return render(request,'getinstantquote.html')#It returns the front page
 def upload(request):
     if request.method=="POST":
-        if len(request.FILES)!=0:
+        if len(request.FILES)!=0:#if file is entered
             file = request.FILES['Upload 3D file']#getting the uploaded file
             fs = FileSystemStorage()
             filename = fs.save(file.name, file)  #saving the file to the media folder which is declared in the settings.py
             messages.success(request,'File '+filename+' Uploaded Succesfuly.')
-            print(filename)
             return render(request,'upload.html')
         else:
             messages.error(request, 'File Upload Failed.')

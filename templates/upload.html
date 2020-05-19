@@ -2,12 +2,16 @@
 {% block content %}
 
 
-    <center>
+
         <form method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
             {% csrf_token %}
+            <h2>Upload 3D Files</h2>
+            <br>
         <input type="file" name="Upload 3D file">
-        <button type="submit" name="Upload" >Upload</button>
+            <br>
+            <br>
+        <input type="submit">
     </form>
 
-    </center>
+    
 {% endblock %}
